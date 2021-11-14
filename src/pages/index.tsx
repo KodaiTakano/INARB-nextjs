@@ -36,15 +36,16 @@ const Home: NextPage = () => {
     random(numOfPicture)
   }, [])
   return (
-    <div className=" mb-10 mt-4">
-      <p className="text-center font-bold text-3xl my-4">
+    <div className="mt-4 mb-10 ">
+      <p className="my-4 text-3xl font-bold text-center">
         横断歩道を選んでください
       </p>
-      <div className=" w-40rem mx-auto gap-4 grid grid-cols-3 justify-center">
-        {randomArray.map((num: number) => {
+      <div className="grid justify-center grid-cols-3 gap-4 mx-auto  w-40rem">
+        {randomArray.map((num: number, index: number) => {
           return (
             <div key={num} className="">
               <img
+                id={index.toString()}
                 src={`/picture/${num}.jpeg`}
                 onClick={() => {
                   if (!selectedArray.includes(num))
@@ -67,12 +68,12 @@ const Home: NextPage = () => {
           )
         })}
       </div>
-      <div className=" flex justify-center mt-4">
+      <div className="flex justify-center mt-4 ">
         <button
           onClick={() => {
             setClick(true)
           }}
-          className="bg-blue-400 p-4 text-white font-bold rounded-full"
+          className="p-4 font-bold text-white bg-blue-400 rounded-full"
         >
           終了する
         </button>
