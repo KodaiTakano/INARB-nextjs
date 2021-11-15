@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { walk } from '../lib/walk'
 
 //画像の枚数(??.jpegにおける??の最大値)
-const numOfPicture = 9
+const numOfPicture = 47
 
 const Home: NextPage = () => {
   const [randomArray, setRandomArray] = useState<number[]>([])
